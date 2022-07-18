@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\admincontroller;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,3 +22,8 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/view_category', [App\Http\Controllers\admincontroller::class, 'view_category']);
+Route::post('/add_category', [App\Http\Controllers\admincontroller::class, 'add_category']);
+
+Route::get('/product', [App\Http\Controllers\admincontroller::class, 'product'])->name('product');
