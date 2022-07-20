@@ -15,13 +15,13 @@ use App\Http\Controllers\admincontroller;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('/view_category', [App\Http\Controllers\admincontroller::class, 'view_category']);
 Route::post('/add_category', [App\Http\Controllers\admincontroller::class, 'add_category']);
